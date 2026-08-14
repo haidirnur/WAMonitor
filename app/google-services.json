@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "993114571616",
+    "project_id": "wamonitor-71e1f",
+    "storage_bucket": "wamonitor-71e1f.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993114571616:android:f338de4c937de85c1a9405",
+        "android_client_info": {
+          "package_name": "com.ucok.wamonitor"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1vSbZ4bv3mRa9F8fP2Ye41PTOtcGvLSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
