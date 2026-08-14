@@ -5,8 +5,6 @@
     <application
         android:allowBackup="true"
         android:label="WA Monitor"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.WAMonitor">
 
         <activity
