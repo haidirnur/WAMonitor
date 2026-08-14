@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WA Monitor"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <!-- STATUS BAR: notif access + service -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:background="#F5F5F5"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/statusNotifAccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⏳ Cek akses notifikasi..."
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/statusTarget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="⏳ Cek target..."
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/statusFirebase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="⏳ Cek Firebase..."
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnRefreshStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Refresh"
+            style="?android:attr/buttonStyleSmall" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/openNotificationAccessButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Buka Pengaturan Akses Notifikasi" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="Nama kontak / nomor yang dipantau (pisah koma jika lebih dari satu):"
+        android:textSize="13sp" />
+
+    <EditText
+        android:id="@+id/targetInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="mis: Budi Kantor, +62812xxxxxxx"
+        android:layout_marginTop="4dp" />
+
+    <Button
+        android:id="@+id/saveTargetButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Simpan Target" />
+
+    <!-- TEST BUTTON: kirim data dummy ke Firestore -->
+    <Button
+        android:id="@+id/btnTestFirestore"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="🧪 Test Kirim ke Firestore"
+        android:backgroundTint="#4CAF50"
+        android:textColor="#FFFFFF" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="12dp"
+        android:background="#DDDDDD" />
+
+    <!-- LOG SECTION -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Log Debug"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnClearLog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hapus Log"
+            style="?android:attr/buttonStyleSmall" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/logScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="4dp"
+        android:background="#1E1E1E">
+
+        <TextView
+            android:id="@+id/logTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text=""
+            android:textColor="#00FF00"
+            android:textSize="10sp"
+            android:fontFamily="monospace" />
+    </ScrollView>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="12dp"
+        android:background="#DDDDDD" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Pesan Tertangkap"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hapus Semua"
+            style="?android:attr/buttonStyleSmall" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/emptyView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Belum ada pesan tertangkap."
+        android:textColor="#999999"
+        android:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
